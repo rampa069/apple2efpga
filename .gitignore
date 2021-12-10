@@ -4,3 +4,4 @@ PLLJ_PLLSPE_INFO.txt
 out/
 db/
 incremental_db/
+upd.sh
