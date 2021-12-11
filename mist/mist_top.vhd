@@ -66,7 +66,10 @@ entity mist_top is
     -- Audio
     AUDIO_L,
     AUDIO_R : out std_logic;
-    
+	 -- DAC
+	 DAC_C_L  : out signed(9 downto 0);
+	 DAC_C_R  : out signed(9 downto 0);
+
     -- UART
 
     UART_RX : in std_logic;
@@ -82,7 +85,7 @@ architecture datapath of mist_top is
 
   constant CONF_STR : string :=
    "AppleII;;"&
-   "S,NIB;"&
+   "S0,NIB,Load Floppy;"&
    "O1,CPU Type,6502,65C02;"&
    "O23,Monitor,Color,B&W,Green,Amber;"&
    "OBC,Scanlines,Off,25%,50%,75%;"&
@@ -491,6 +494,9 @@ begin
       unsigned(O_AUDIO_L) => psg_audio_l,
       unsigned(O_AUDIO_R) => psg_audio_r
       );
+
+  DAC_C_L <= signed(psg_audio_l + (audio & "0000000")); 		
+  DAC_C_R <= signed(psg_audio_r + (audio & "0000000")); 		
 
   dac_l : work.dac
     generic map(10)

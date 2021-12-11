@@ -19,13 +19,13 @@
 #
 # Quartus Prime
 # Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-# Date created = 00:05:16  December 11, 2021
+# Date created = 00:53:35  December 11, 2021
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "21.1"
-DATE = "00:05:16  December 11, 2021"
+DATE = "00:53:35  December 11, 2021"
 
 # Revisions
 
-PROJECT_REVISION = "apple2efpga_neptuno"
+PROJECT_REVISION = "apple2efpga_uareloaded"
